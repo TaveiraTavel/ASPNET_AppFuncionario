@@ -1,0 +1,27 @@
+﻿@model AppTurmaB.Models.Funcionario 
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Cadastro de Funcionarios</h2>
+@using (Html.BeginForm())
+{
+<div>
+    @Html.LabelFor(model => Model.FuncID)
+    @Html.EditorFor(model => Model.FuncID)
+    @Html.ValidationMessageFor(Model => Model.FuncID)
+</div>
+<div>
+    @Html.LabelFor(model => Model.Nome)
+    @Html.EditorFor(model => Model.Nome)
+    @Html.ValidationMessageFor(Model => Model.Nome)
+</div>
+<div>
+    @Html.LabelFor(model => Model.Genero)
+    @Html.EditorFor(model => Model.Genero)
+    @Html.ValidationMessageFor(Model => Model.Genero)
+</div>
+
+<p><input type="submit" value="Cadastrar"/></p>
+}
