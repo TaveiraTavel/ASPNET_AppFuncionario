@@ -21,6 +21,7 @@ namespace AppTurmaB.Models
         public string Genero { get; set; }
 
         [Required]
+        [RegularExpression(@"[a-zA-Z]{5,10}")]
         public string Senha { get; set; }
 
         [Required]
