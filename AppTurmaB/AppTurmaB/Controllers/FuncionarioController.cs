@@ -14,6 +14,7 @@ namespace AppTurmaB.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Create(Funcionario funcionario)
         {
