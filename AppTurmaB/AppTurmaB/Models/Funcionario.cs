@@ -21,6 +21,17 @@ namespace AppTurmaB.Models
         public string Genero { get; set; }
 
         [Required]
+        [EmailAddress]
+        [RegularExpression(@"^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*\s+&lt;(\w[-._\w]*\w@\w[-._\w]*\w\.\w{2,3})&gt;$|^(\w[-._\w]*\w@\w[-._\w]*\w\.\w{2,3})$")]
+        public string Email { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy", ApplyFormatInEditMode = true)]
+
+        public DateTime DataNasc { get; set; }
+
+        [Required]
         [RegularExpression(@"[a-zA-Z]{5,10}")]
         public string Senha { get; set; }
 

@@ -22,6 +22,19 @@
         @Html.EditorFor(model => Model.Genero)
         @Html.ValidationMessageFor(Model => Model.Genero)
     </div>
+
+    <div>
+        @Html.LabelFor(model => Model.Email)
+        @Html.EditorFor(model => Model.Email)
+        @Html.ValidationMessageFor(Model => Model.Email)
+    </div>
+
+    <div>
+        @Html.LabelFor(model => Model.DataNasc)
+        @Html.EditorFor(model => Model.DataNasc)
+        @Html.ValidationMessageFor(Model => Model.DataNasc)
+    </div>
+
     <div>
         @Html.LabelFor(model => Model.Senha)
         @Html.PasswordFor(model => Model.Senha)
