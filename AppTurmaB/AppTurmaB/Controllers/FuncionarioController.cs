@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using AppTurmaB.Models;
 using System.Web.Mvc;
+using System.Collections.ObjectModel;
 
 namespace AppTurmaB.Controllers
 {
@@ -23,6 +24,18 @@ namespace AppTurmaB.Controllers
                 return View("Resultado", funcionario);
             }
             return View();
+        }
+
+        public ActionResult ValidaLogin(string Login)
+        {
+            var dbExemplo = new Collection<string>
+            {
+                "Lety",
+                "Arthur",
+                "Shen"
+            };
+
+            return Json(dbExemplo.All(a => a.ToLower() != Login.ToLower()), JsonRequestBehavior.AllowGet);
         }
     }
 }

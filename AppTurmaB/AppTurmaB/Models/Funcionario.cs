@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace AppTurmaB.Models
 {
@@ -32,12 +33,16 @@ namespace AppTurmaB.Models
         public DateTime DataNasc { get; set; }
 
         [Required]
+        [Remote ("ValidaLogin", "Funcionario", ErrorMessage = "O login já existe.")]
+        public string Login { get; set; }
+
+        [Required]
         [RegularExpression(@"[a-zA-Z]{5,10}")]
         public string Senha { get; set; }
 
         [Required]
         [Display(Name = "Confirmar Senha")]
-        [Compare("Senha")]
+        [System.ComponentModel.DataAnnotations.Compare("Senha")]
         public string ConfSenha { get; set; }
     }
 }

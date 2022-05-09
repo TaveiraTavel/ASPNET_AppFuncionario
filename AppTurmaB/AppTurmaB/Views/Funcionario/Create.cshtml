@@ -36,6 +36,12 @@
     </div>
 
     <div>
+        @Html.LabelFor(model => Model.Login)
+        @Html.EditorFor(model => Model.Login)
+        @Html.ValidationMessageFor(Model => Model.Login)
+    </div>
+
+    <div>
         @Html.LabelFor(model => Model.Senha)
         @Html.PasswordFor(model => Model.Senha)
         @Html.ValidationMessageFor(Model => Model.Senha)
@@ -49,4 +55,6 @@
 
 
     <p><input type="submit" value="Cadastrar" /></p>
+
+    @section scripts{@Scripts.Render("~/bundles/jqueryval")}
 }
